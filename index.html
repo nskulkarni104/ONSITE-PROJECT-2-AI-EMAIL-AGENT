@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Agent - Sick Leave Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 400px;
+            box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #5a67d8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Sick Leave Email Generator</h2>
+
+    <form method="POST" action="/send">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="text" name="manager_name" placeholder="Manager Name" required>
+        <input type="email" name="to_email" placeholder="Manager Email" required>
+        <input type="date" name="start_date" required>
+        <input type="date" name="end_date" required>
+        <input type="text" name="reason" placeholder="Reason for Leave" required>
+        <input type="text" name="colleague_name" placeholder="Colleague Handling Work (Optional)">
+
+
+        <button type="submit">Generate & Send Email</button>
+    </form>
+</div>
+
+</body>
+</html>
